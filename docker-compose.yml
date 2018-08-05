@@ -15,7 +15,7 @@ services:
       - "3306:3306"
 
   mirth-connect:
-    build: mirth-connect
+    image: hedidin/fhirconnect2:dev
     volumes:
       - "./mirth-connect/mirth.properties:/opt/mirth-connect/conf/mirth.properties:ro"    
       - "./shared_volume:/var/shared_volume:rw"
