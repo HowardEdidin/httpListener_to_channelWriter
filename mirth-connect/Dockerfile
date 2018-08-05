@@ -39,12 +39,14 @@ VOLUME /var/spool/mirth
 # ----
 
 # create directories to store/manage HL7 messages
-RUN mkdir /home/$USER/Pickup
-RUN mkdir /home/$USER/Dropoff
-RUN mkdir /home/$USER/Error
-RUN chown mirth /home/$USER/Pickup /home/$USER/Dropoff /home/$USER/Error
+RUN mkdir /home/Pickup
+RUN mkdir /home/Dropoff
+RUN mkdir /home/Error
+
+RUN chown mirth /home/Pickup /home/Dropoff /home/Error
 
 EXPOSE 8080 8443
+
 
 COPY docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
